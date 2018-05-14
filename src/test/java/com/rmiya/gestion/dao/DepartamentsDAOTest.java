@@ -95,10 +95,10 @@ public class DepartamentsDAOTest {
 
 		logger.info("--");
 		
-		String NAME = "MARIO";
+		String NAME = "GUERRA";
 		//logger.info(LOGIN);
-		String DESC = "BROS";
-		String CITY = "JJJ";
+		String DESC = "GUERRA";
+		String CITY = "JOSE";
 
 		try {
 			//
@@ -118,7 +118,7 @@ public class DepartamentsDAOTest {
 		}
 
 	}
-		
+	/*	
 	@Test
 	public void testUpdateDepartment() {
 
@@ -150,7 +150,7 @@ public class DepartamentsDAOTest {
 
 	}
 	
-	
+	*/
 	@Test
 	public void testDeleteDepartment() {
 
