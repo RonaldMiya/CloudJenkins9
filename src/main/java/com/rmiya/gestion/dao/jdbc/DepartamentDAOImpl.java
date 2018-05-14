@@ -60,7 +60,7 @@ public class DepartamentDAOImpl implements DepartamentDAO{
 
 		} catch (EmptyResultDataAccessException e) {
 			throw new EmptyResultException();
-		} catch (Exception e) {
+		} catch (Exception e) {	
 			logger.info("Error: " + e.getMessage());
 			throw new DAOException(e.getMessage());
 		}
@@ -110,18 +110,17 @@ public class DepartamentDAOImpl implements DepartamentDAO{
 
 	@Override
 	public void update(String name, String description, String city) throws DAOException {
-		
-		String query = "UPDATE departments SET description = ?, city =? WHERE name= ?";
+		String query = "UPDATE departments SET description =?, city = ? WHERE name = ?";
 
-		Object[] params = new Object[] { name, description, city};
+		Object[] params = new Object[] {description, city, name};
 
 		try {
 			jdbcTemplate.update(query, params);
+			
 		} catch (Exception e) {
 			logger.info("Error: " + e.getMessage());
 			throw new DAOException(e.getMessage());
-}
-		
+		}
 		
 	}
 	

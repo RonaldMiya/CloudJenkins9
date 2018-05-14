@@ -43,7 +43,6 @@ public class DepartamentsDAOTest {
 		logger.info("Antes de cada metodo");
 	}
 	
-
 		
 	@Test
 	public void testFindDepartmentById() {
@@ -91,14 +90,14 @@ public class DepartamentsDAOTest {
 
 	
 	@Test
-	public void testCreateEmployee() {
+	public void testCreateDepartment() {
 
 		logger.info("--");
 		
-		String NAME = "GUERRA";
+		String NAME = "Erick";
 		//logger.info(LOGIN);
-		String DESC = "GUERRA";
-		String CITY = "JOSE";
+		String DESC = "Profesor";
+		String CITY = "Lima";
 
 		try {
 			//
@@ -118,29 +117,32 @@ public class DepartamentsDAOTest {
 		}
 
 	}
-	/*	
+	
+	
 	@Test
 	public void testUpdateDepartment() {
 
-		String NAME = "RONALD";
-		//logger.info(LOGIN);
-		String DESC = "MIYA";
-		String CITY = "JUNIN";
-	
-		//logger.info(LOGIN);
-		String UPDESC = "DE LA CRUZ";
-		String UPCITY = "LIMA";
+		String name = "Estmen";
+		String description = "Egresado";
+		String city = "Madre de Dios";
+		
+		
+		String UP_description = "Estudia";
+		String UP_city = "Ayacucho";
+		
+
 		
 		try {
 			//
-			departamentDAO.create(NAME, DESC, CITY);
-			//
-			departamentDAO.update(NAME, UPDESC, UPCITY);
-			//
-			Departament emp = departamentDAO.findDepartmentByName(NAME);
-
-			Assert.assertEquals(UPDESC, emp.getDescription());
-			Assert.assertEquals(UPCITY, emp.getCity());
+			departamentDAO.create(name, description, city);
+					
+			departamentDAO.update(name, UP_description, UP_city);
+			
+			Departament department= departamentDAO.findDepartmentByName(name);
+					
+			Assert.assertEquals(UP_description, department.getDescription());
+			Assert.assertEquals(UP_city, department.getCity());
+	
 			
 		} catch (DAOException e) {
 			fail(e.getMessage());
@@ -148,9 +150,8 @@ public class DepartamentsDAOTest {
 			fail(e.getMessage());
 		}
 
-	}
+	}	
 	
-	*/
 	@Test
 	public void testDeleteDepartment() {
 
